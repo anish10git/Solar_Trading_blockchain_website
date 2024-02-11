@@ -1,0 +1,28 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Book</title>
+</head>
+<body>
+    <h1>Transaction Log Book</h1>
+    <table>
+        <tr>
+            <th>Transaction ID</th>
+            <th>Seller Name</th>
+            <th>Buyer Name</th>
+            <!-- Add more columns as needed -->
+        </tr>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.id }}</td>
+                <td>{{ transaction.seller_name }}</td>
+                <td>{{ transaction.buyer_name }}</td>
+                <!-- Add more cells based on your database schema -->
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- templates/place_bid.html -->
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Bid Page</title>
+</head>
+<body>
+    <h1>Place Bid Page</h1>
+    <form method="POST" action="{{ url_for('process_bid', buyer_id=buyer_id) }}">
+        <label for="kw_available">KW Available:</label>
+        <input type="text" id="kw_available" name="kw_available" placeholder="Enter KW available" required><br>
+
+        <label for="bid_price">Bid Price:</label>
+        <input type="text" id="bid_price" name="bid_price" placeholder="Enter your bid price" required><br>
+
+        <button type="submit">Submit Bid</button>
+    </form>
+    <a href="{{ url_for('home') }}">Home</a> |
+    <a href="{{ url_for('sell') }}">Sell</a> |
+    <a href="{{ url_for('buy') }}">Buy</a> |
+    <a href="{{ url_for('log_book') }}">Log Book</a>
